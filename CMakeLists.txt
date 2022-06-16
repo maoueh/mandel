@@ -240,5 +240,7 @@ file(WRITE "${CMAKE_BINARY_DIR}/CTestCustom.cmake" "SET(CTEST_CUSTOM_TESTS_IGNOR
 
 include(doxygen)
 
-include(package.cmake)
-include(CPack)
+if(!APPLE)
+  include(package.cmake)
+  include(CPack)
+endif()
